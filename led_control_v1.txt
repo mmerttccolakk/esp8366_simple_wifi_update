@@ -1,0 +1,15 @@
+#include <WiFiManager.h> // https://github.com/tzapu/WiFiManager
+
+void setup() {
+
+    //serial begin
+    Serial.begin(115200);
+    //local intialization
+    WiFiManager wifiManager;
+    //connect wifi
+    wifiManager.autoConnect("Cyber_JET", "mert1994");
+}
+
+void loop() {
+    
+}
