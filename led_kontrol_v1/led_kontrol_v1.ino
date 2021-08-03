@@ -16,14 +16,17 @@ void setup() {
     
     //for wifi connect
     WiFiManager wifiManager;
-    wifiManager.autoConnect("Cyber_JET", "mert1994");
+    wifiManager.autoConnect("Cyber_JET", "12345678");
     
     // for HTTPUpdate port 8080
     MDNS.begin(host);
     httpUpdater.setup(&httpServer);
     httpServer.begin();
     MDNS.addService("http", "tcp", 8080);
-    Serial.printf("HTTPUpdateServer ready! Open http://ip:port/update in your browser\n", host);
+    Serial.println("HTTPUpdateServer ready!"); 
+	  Serial.print("Open http://");
+	  Serial.print(WiFi.localIP());
+	  Serial.println(":8080/update in your browser\n");
 }
 
 void loop() {
